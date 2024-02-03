@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+    <meta charset="utf-8">
+    <title>黑客帝国代码雨</title>
+</head>
+
+<body onselectstart="false">
+
+<canvas id="canvas" height="100%" width="100%"></canvas>
+
+<style type="text/css">
+    html,body{
+        margin: 0; padding: 0; overflow: hidden;
+    }
+</style>
+
+<script type="text/javascript">
+    //canvas控制
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    //canvas画布大小
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    var texts = '0123456789'.split(''); //下落数组
+    //文字大小
+    var fontSize = 16;
+    var columns = canvas.width/fontSize;
+    // 用于计算输出文字时坐标，所以长度即为列数
+    var drops = [];
+    //初始值
+    for(var x = 0; x < columns; x++){
+        drops[x] = 1; //全部赋值
+    }
+
+    function draw(){
+        //让背景逐渐由透明到不透明
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        //文字颜色
+        ctx.fillStyle = randColor();
+        ctx.font = fontSize + 'px Microsoft YaHei'; //字体
+        //逐行输出文字
+        for(var i = 0; i < drops.length; i++){
+            var text = texts[Math.floor(Math.random()*texts.length)];
+            ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+
+            if(drops[i]*fontSize > canvas.height || Math.random() > 0.95){
+                drops[i] = 0;
+            }
+
+            drops[i]++;
+        }
+    }
+
+    function randColor(){//随机颜色
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        return "rgb("+r+","+g+","+b+")";
+    }
+
+    setInterval(draw, 50); //下落速度
+</script>
+
+</body></html>
