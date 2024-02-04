@@ -1,0 +1,143 @@
+一、前置参数
+自动 防故障功能
+# 默认这项功能为True, 这项功能意味着：当鼠标的指针在屏幕的最坐上方，程序会报错；目的是为了防止程序无法停止
+pyautogui.FAILSAFE =False  
+
+停顿功能
+# 意味着所有pyautogui的指令都要暂停一秒；其他指令不会停顿；这样做，可以防止键盘鼠标操作太快；
+pyautogui.PAUSE = 1    
+
+
+二、 鼠标参数
+2.1 获取屏幕分辨率
+print(pyautogui.size())   # 返回所用显示器的分辨率； 输出：Size(width=1920, height=1080)
+width,height = pyautogui.size()
+print(width,height)  # 1920 1080
+
+2.2 鼠标移动事件
+移动到指定位置
+# 将鼠标移动到指定的坐标；duration 的作用是设置移动时间，所有的gui函数都有这个参数，而且都是可选参数；
+# 向右移动100px，向下移动500px, 这个过程持续 1 秒钟；
+pyautogui.moveTo(100,300,duration=1)   
+1
+2
+3
+鼠标位置
+print(pyautogui.position())   # 得到当前鼠标位置；输出：Point(x=200, y=800)
+1
+2.3 鼠标点击事件
+鼠标单击
+# 点击鼠标
+pyautogui.click(10,10)   # 鼠标点击指定位置，默认左键
+pyautogui.click(10,10,button='left')  # 单击左键
+pyautogui.click(1000,300,button='right')  # 单击右键
+pyautogui.click(1000,300,button='middle')  # 单击中间
+1
+2
+3
+4
+5
+鼠标双击
+pyautogui.doubleClick(10,10)  # 指定位置，双击左键
+pyautogui.rightClick(10,10)   # 指定位置，双击右键
+pyautogui.middleClick(10,10)  # 指定位置，双击中键
+1
+2
+3
+鼠标点击与释放
+pyautogui.mouseDown()   # 鼠标按下
+pyautogui.mouseUp()    # 鼠标释放
+1
+2
+鼠标控制拖动事件
+# 拖动到指定位置
+# 将鼠标拖动到指定的坐标；duration 的作用是设置移动时间，所有的gui函数都有这个参数，而且都是可选参数
+pyautogui.dragTo(100,300,duration=1)   
+
+# 按方向拖动
+# 向右拖动100px，向下拖动500px, 这个过程持续 1 秒钟
+pyautogui.dragRel(100,500,duration=4)   # 第一个参数是左右移动像素值，第二个是上下
+1
+2
+3
+4
+5
+6
+7
+鼠标滚轮
+# 控制鼠标滚动的函数是scroll()， 传入一个整数的参数，说明向上或向下滚动多少个单位；单位根据操作系统不同而不同
+pyautogui.scroll(300)  # 向下滚动300个单位；
+1
+2
+三、 键盘事件
+3.1 键盘输入函数
+pyautogui.keyDown() ： 模拟按键按下；
+pyautogui.keyUp() ： 模拟按键释放；
+pyautogui.press() ： # 就是调用keyDown() & keyUp(),模拟一次按键；
+pyautogui.typewrite('this',0.5) ： 第一参数是输入内容，第二个参数是每个字符间的间隔时间；
+pyautogui.typewrite(['T','h','i','s'])：typewrite 还可以传入单字母的列表；
+
+键盘事件
+pyautogui.keyDown('shift')    # 按下shift
+pyautogui.press('4')    # 按下 4
+pyautogui.keyUp('shift')   # 释放 shift
+1
+2
+3
+缓慢输出
+pyautogui.typewrite('$*……%……￥', 0.5)
+1
+3.2 键盘特殊顺序输出
+pyautogui.typewrite(['T','i','s','left','left','h',])   # 输出：This
+1
+3.3 特殊按键
+键盘字符串	说明
+enter(或return 或 \n)	回车
+esc	ESC键
+shiftleft, shiftright	左右SHIFT键
+altleft, altright	左右ALT键
+ctrlleft, ctrlright	左右CTRL键
+tab (\t)	TAB键
+backspace, delete	BACKSPACE 、DELETE键
+pageup, pagedown	PAGE UP 和 PAGE DOWN键
+home, end	HOME 和 END键
+up, down, left,right	箭头键
+f1, f2, f3…. f12	F1…….F12键
+volumemute, volumedown,volumeup	声音变大变小静音（有些键盘没有）
+pause	PAUSE键，暂停键
+capslock	CAPS LOCK 键
+numlock	NUM LOCK 键
+scrolllock	SCROLLLOCK 键
+insert	INSERT键
+printscreen	PRINT SCREEN键
+winleft, winright	Win键（windows ）
+command	command键（Mac OS X ）
+option	option（Mac OS X）
+3.4 快捷键
+如果我们需要模拟复制的快捷键 ctrl + c ，如果用前面的方法，则代码为：
+pyautogui.keyDown('ctrl')
+pyautogui.keyDown('c')
+pyautogui.keyUp('c')
+pyautogui.keyUp('ctrl')
+1
+2
+3
+4
+优化后
+pyautogui.hotkey('ctrl','c')
+1
+四、 屏幕处理
+4.1 屏幕截图
+pyautogui 提供了一个方法screenshot()，可以返回一个Pillow的image对象
+
+常用参数
+
+im = pyautogui.screenshot() # 返回屏幕的截图，是一个Pillow的image对象
+im.getpixel((500, 500)) # 返回im对象上，（500，500）这一点像素的颜色，是一个RGB元组
+pyautogui.pixelMatchesColor(500,500,(12,120,400)) # 是一个对比函数，对比的是屏幕上（500，500）这一点像素的颜色，与所给的元素是否相同；
+1
+2
+3
+截图操作
+im = pyautogui.screenshot()
+im.save('屏幕截图.png')
