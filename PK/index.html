@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-cn">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+
+
+  <script type="text/javascript">
+  //练习
+		function showMessage(){
+			//获取用户名文本框
+			var username = document.getElementById("username");
+			//验证用户名
+			if(username.value = "12345"){
+				document.write("<font color='green'>验证通过</font>");
+			}else{
+				document.write("<font color='red'>验证未通过</font>");
+			}
+		}
+	</script>
+
+
+ </head>
+ <body>
+  
+
+<p>用户名长度不少于8位，且不能以数字开头</p>
+  <br>
+<p>请输入用户名：</p>
+<input type="text" name="username" id="username"/>
+<input type="buttom" onClick="showMessage()" value="提交"/>
+
+
+ </body>
+</html>
