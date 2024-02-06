@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>页面计时器</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="mainbox">
+    <input type="checkbox" id="start" hidden>
+    <input type="checkbox" id="stop" hidden>
+    <input type="checkbox" id="reset" hidden>
+    <div class="timer">
+        <div class="time-card" id="nowTime"></div>
+    </div>
+    <div class="timer">
+        <div class="time-card" data-type="hours" data-max="24">
+            <div class="time-card-count"></div>
+            <div class="time-card-label">时</div>
+        </div>
+        <span class="colon">:</span>
+        <div class="time-card" data-type="minutes" data-max="60">
+            <div class="time-card-count"></div>
+            <div class="time-card-label">分</div>
+        </div>
+        <span class="colon">:</span>
+        <div class="time-card" data-type="seconds" data-max="60">
+            <div class="time-card-count"></div>
+            <div class="time-card-label">秒</div>
+        </div>
+    </div>
+    <div class="actions">
+        <label class="btn" disabled for="reset">重置</label>
+        <label class="btn btn-success" for="start">开始</label>
+        <label class="btn btn-danger" for="stop">暂停</label>
+    </div>
+    <label for="stop" class="regenerate"> </label>
+</div>
+<script>
+    function refreshCount() {
+        var myDate = new Date();
+        document.getElementById("nowTime").innerHTML="当前时间："+myDate.toLocaleString('chinese',{hour12:false});
+    };
+    var t1=window.setInterval(refreshCount,1000);
+</script>
+</body>
+</html>
