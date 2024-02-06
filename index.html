@@ -71,10 +71,35 @@
             background-color: transparent;
             text-decoration: underline;
         }
+        .test{
+            padding:10px;
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -o-user-select:none;
+            user-select:none;}
+        
+        *{
+            moz-user-select: -moz-none;
+            -moz-user-select: none;
+            -o-user-select:none;
+            -khtml-user-select:none;
+            -webkit-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+        }
 
     </style>
 </head>
 <body>
+<noscript> 
+    <iframe src="*.htm"></iframe> 
+</noscript>
+οndragstart='return false'
+onselectstart ='return false'
+οnselect='document.selection.empty()'
+οncοpy='document.selection.empty()'
+onbeforecopy='return false'
+οnmοuseup='document.selection.empty()' 
 <script type="text/javascript">
     !function (e, t, a) {
         function r() {
@@ -142,7 +167,7 @@
 <a href="https://avrox-163.github.io/download/txt/download.html">下载文本文档</a>
 <a href="https://avrox-163.github.io/download/photo/download.html">下载图片</a>
 <a href="https://avrox-163.github.io/PK/index.html">PK（学习）</a>
-<div style="position:fixed; bottom:10px; left:900px;">Version:0.10.2.240206 Alpha</div>
+<div style="position:fixed; bottom:10px; left:900px;">Version:0.10.3.240206 Alpha</div>
 <div class="background">
     <div class="transbox">
 
