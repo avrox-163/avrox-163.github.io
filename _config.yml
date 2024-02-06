@@ -1,0 +1,110 @@
+# Site settings
+title: avrox的博客
+SEOTitle: avrox的博客
+header-img: img/post-bg-desk.jpg
+email: xeabc1213@126.com
+description: ""
+keyword: ""
+url: "https://avrox-blog.github.io"          # your host, for absolute URL
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/avrox-blog/avrox-blog.github.io.git" # you code repository
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "Goals determine what you're going to be!"
+sidebar-avatar: /img/about-HJ.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# SNS settings
+RSS: false
+# weibo_username:     avrox
+# zhihu_username:     avrox
+# github_username:    avrox-163,avrox-blog
+# facebook_username:  avrox
+# jianshu_username:   avrox
+# twitter_username:   avrox
+
+
+
+
+
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# 评论系统
+# Disqus（https://disqus.com/）
+# disqus_username: qiubaiying
+
+# Gitalk
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: d18b343dd9c7ca49518a                            #生成的clientID
+  clientSecret: 539e88b8a7feffaddbb553b9c421dfefcbc6eced    #生成的clientSecret
+  repo: avrox-blog.github.io    #仓库名称
+  owner: avrox-163   #github用户名
+  admin: avrox-163
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
+
+# 统计
+
+# Analytics settings
+# Baidu Analytics
+# ba_track_id: b50bf2b12b5338a1845e33832976fd68
+
+# Google Analytics
+# ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+# ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+
+
+
+
+
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# 友情链接，请尽量不要删除，谢谢！
+friends: [
+    {
+        title: "星球国际语",
+        href: "https://globien.gitee.io"
+    },{
+        title: "星球语互动社区",
+        href: "https://tieba.baidu.com/f?kw=%E6%A0%BC%E7%BD%97%E6%AF%94%E8%A8%80&fr=home"
+    },{
+        title: "知乎：人造国际语",
+        href: "https://zhuanlan.zhihu.com/Artificial-International-Language"
+    }
+]
