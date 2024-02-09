@@ -6,9 +6,9 @@
     <!-- 樱花特效 -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!-- 樱花特效 -->
-    
+
     <title>我的个人介绍</title>
-    <link rel="icon" href="me.ico" type="me.jpg" sizes="32x32">
+    <link rel="icon" href="me.ico" type="me.jpg" sizes="24.50x32.64">
     <!-- css页面配置 -->
     <style>
         body {
@@ -17,8 +17,8 @@
         }
 
         div.transbox {
-            width: 1500px;
-            height: 700px;
+            width: 1700px;
+            height: 800px;
             margin: 90px 90px;
             background-color: #ffffff;
             border: 1px solid #FFFFFF;
@@ -451,6 +451,22 @@
     }(window, document);
 </script>
 <!-- 左键单击生成小星星 -->
+<!-- 无法播放音频 -->
+<script type="text/javascript">
+    window.onload = function(){
+        setInterval("toggleSound()",100);
+    }
+
+    function toggleSound() {
+        var music = document.getElementById("vd");//获取ID
+
+        if (music.paused) { //判读是否播放
+            music.paused=false;
+            music.play(); //没有就播放
+        }
+    }
+</script>
+<!-- 无法播放音频 -->
 
 <a href="https://avrox-163.github.io/coderain/index.html">代码雨</a>
 <a href="https://avrox-163.github.io/compass_clock/index.html">罗盘时钟</a>
@@ -459,17 +475,17 @@
 <a href="https://avrox-163.github.io/CanvasPixelClock/index.html">粒子时钟</a>
 <a href="https://avrox-163.github.io/CircleClock/index.html">科技圆表</a>
 <a href="https://avrox-163.github.io/timer/index.html">计时器</a>
-<a href="https://avrox-163.github.io/index.html">刷新</a>
+<a href="https://avrox-163.github.io/index.html">刷新&播放</a>
 <a href="https://avrox-163.github.io/download/python/download.html">下载python源代码</a>
 <a href="https://avrox-163.github.io/download/txt/download.html">下载文本文档</a>
 <a href="https://avrox-163.github.io/download/photo/download.html">下载图片</a>
 <a href="https://avrox-163.github.io/PK/index.html">PK（学习）</a>
-<div style="background-color=white; position:fixed; bottom:10px; left:750px;">Version:0.10.7.240206 Alpha</div>
+<div style="background-color=white; position:fixed; bottom:10px; left:600px;">Version:0.10.8.240206 Alpha Debug:1</div>
 <div class="background">
     <div class="transbox">
 
         <h1>个人简介</h1>
-        <img src="me.jpg" height="96px" width="54px" class="ex1"/>
+        <img src="me.jpg" width="61.25px" height="81.6px"  class="ex1"/>
         <h2 class="ex1">名字：BXR</h2>
         <h3 class="ex1">城市：哈尔滨市</h3>
         <h3 class="ex1">学校：第四十九中学</h3>
