@@ -1,0 +1,38 @@
+
+body {
+    background: url("../image/index_bg.png");
+    background-size: cover;
+}
+
+.center {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+video {
+    width: 1000px;
+}
+
+.space-museum-title {
+    color: white;
+}
+
+.space-museum-text {
+    font-size: 20px;
+    line-height: 36px;
+    color: white;
+}
+
+.rocket-container {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.rocket {
+    width: 100px;
+}
+
+.rocket:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
