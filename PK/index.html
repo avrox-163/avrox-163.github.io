@@ -7,25 +7,18 @@
 
 
 <body>
-<label>你的班级（1~13）</label>
+<label>暗号</label>
 <br>
-<input id="class">
-<br>
-<label>你的名字首字母（小写）</label>
-<br>
-<input id="name">
+<input id="250">
 <br>
 <button onclick="myFunction()">验证</button>
 
 <script>
     function myFunction() {
-        if (document.getElementById("class").value == "9") {
-            if (document.getElementById("name").value == "yqx") {
-                alert("验证成功");
-                window.open("http://avrox-163.github.io/PK/readme.html","_blank");
-            } else {
-                alert("验证失败");
-            }
+
+        if (document.getElementById("250").value == "yqxis250") {
+            alert("验证成功");
+            window.open("https://avrox-163.github.io/PK/readme.html", "_blank");
         } else {
             alert("验证失败");
         }
