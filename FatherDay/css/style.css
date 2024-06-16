@@ -1,0 +1,17 @@
+html{
+  width: 50%;
+  margin: 0 auto; 
+} 
+video{
+  margin-top:100px;
+}
+p{
+  font-size:30px;
+}
+a{
+  font-size:30px;
+}
+body {
+  background-image: url('../images/FatherDay.png');
+  background-size: cover;
+  background-attachment: fixed;
