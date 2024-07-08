@@ -64,6 +64,10 @@ a:active {
     text-decoration: underline;
 }
 
+a.ex1 {
+    margin-left: 5cm;
+}
+
 .test {
     padding: 10px;
     -webkit-user-select: none;
