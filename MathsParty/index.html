@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数学党</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+        }
+        header img {
+            width: 150px;
+            position: relative;
+            display: block;
+            margin: 0 auto;
+        }
+        header h1 {
+            margin: 0.5em 0;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+            min-height: calc(100vh - 160px);
+        }
+        .card {
+            background-color: white;
+            margin: 10px 0;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid #4CAF50;
+        }
+        .card h2 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        .card h2 i {
+            margin-right: 10px;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card ul li {
+            margin: 10px 0;
+        }
+        .card ul li a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+        .card ul li a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="数学党">
+        <h1>欢迎来到数学党</h1>
+        <p>一起探索数学的美丽与奥秘</p>
+    </header>
+    <nav>
+        <a href="#home"><i class="fas fa-home"></i> 首页</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> 关于我们</a>
+        <a href="#resources"><i class="fas fa-book"></i> 资源</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> 联系我们</a>
+    </nav>
+    <div class="container">
+        <div id="home" class="card">
+            <h2><i class="fas fa-newspaper"></i> 最新消息</h2>
+            <p>欢迎加入数学党！这里是数学爱好者的天堂。</p>
+        </div>
+        <div id="about" class="card">
+            <h2><i class="fas fa-users"></i> 关于我们</h2>
+            <p>数学党致力于为数学爱好者提供一个交流和学习的平台。</p>
+        </div>
+        <div id="resources" class="card">
+            <h2><i class="fas fa-tools"></i> 资源</h2>
+            <ul>
+                <li><a href="https://www.example.com"><i class="fas fa-angle-right"></i> 数学竞赛资料</a></li>
+                <li><a href="https://www.example.com"><i class="fas fa-angle-right"></i> 数学学习指南</a></li>
+                <li><a href="https://www.example.com"><i class="fas fa-angle-right"></i> 数学题库</a></li>
+            </ul>
+        </div>
+        <div id="contact" class="card">
+            <h2><i class="fas fa-comments"></i> 联系我们</h2>
+            <p>如果有任何问题或建议，请通过以下方式联系我们：</p>
+            <p><i class="fas fa-envelope"></i> 邮箱：contact@mathparty.com</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 数学党. 版权所有.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

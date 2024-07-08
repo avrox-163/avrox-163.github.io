@@ -14,8 +14,9 @@
 未来的日子里，我希望能够和大家一起成长，共同进步，创造美好的明天！💪✨🌈
 
 ### 数学万岁！！！
- 
+
 ## 主要内容：
+<a href="https://avrox-163.github.io/MathsParty/index.html">数学党</a>
 <a href="https://avrox-163.github.io/coderain/index.html">代码雨</a>
 <a href="https://avrox-163.github.io/compass_clock/index.html">罗盘时钟</a>
 <a href="https://avrox-163.github.io/aperture/index.html">光圈</a>
