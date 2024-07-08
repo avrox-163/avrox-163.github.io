@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /
 Allow: /index.html
+Allow: /MathsParty/index.html
