@@ -599,6 +599,11 @@
             event.preventDefault(); // 阻止默认事件行为
             window.event.returnValue = false;
         }
+        // 判断是否按下Ctrl+S，83为S键码
+        if (event.ctrlKey && event.keyCode == 83) {
+            event.preventDefault(); // 阻止默认事件行为
+            window.event.returnValue = false;
+        }
     }
     var threshold = 160; // 打开控制台的宽或高阈值
     // 每秒检查一次
