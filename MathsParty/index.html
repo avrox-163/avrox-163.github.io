@@ -154,11 +154,13 @@
             user-select: none;
         }
     </style>
+
+    <noscript>
+        <iframe src="*.html"></iframe>
+        <iframe src="*.htm"></iframe>
+    </noscript>
 </head>
-<noscript>
-    <iframe src="*.html"></iframe>
-    <iframe src="*.htm"></iframe>
-</noscript>
+
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'
       onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'
       onmouseup='document.selection.empty()'>
@@ -589,6 +591,11 @@
     window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
         // 判断是否按下F12，F12键码为123
         if (event.keyCode == 123) {
+            event.preventDefault(); // 阻止默认事件行为
+            window.event.returnValue = false;
+        }
+        // 判断是否按下Ctrl+P，80为P键码
+        if (event.ctrlKey && event.keyCode == 80) {
             event.preventDefault(); // 阻止默认事件行为
             window.event.returnValue = false;
         }
