@@ -8,6 +8,10 @@
     <meta name="keywords" content="数学, 数学党, 数学爱好者, 数学交流">
     <title>数学党</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- 樱花特效 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- 樱花特效 -->
+
     <link rel="icon" href="logo.png" type="image/png" sizes="24x24">
     <style>
         body {
@@ -197,23 +201,7 @@
         <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
 </footer>
-<!-- 无法播放音频 -->
-<script type="text/javascript">
-    window.onload = function () {
-        setInterval("toggleSound()", 100);
-    }
-
-    function toggleSound() {
-        var music = document.getElementById("vd");//获取ID
-
-        if (music.paused) { //判读是否播放
-            music.paused = false;
-            music.play(); //没有就播放
-        }
-    }
-</script>
-
-<!-- 无法播放音频 -->
+<span class="js-cursor-container"></span>
 <!-- 樱花特效 -->
 <script>
     var stop, staticx;
@@ -385,6 +373,128 @@
     }
 </script>
 <!-- 樱花特效 -->
+<!-- 鼠标小星星拖尾跟随 -->
+<script>
+    (function fairyDustCursor() {
+
+        var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        var cursor = {x: width / 2, y: width / 2};
+        var particles = [];
+
+        function init() {
+            bindEvents();
+            loop();
+        }
+
+
+        function bindEvents() {
+            document.addEventListener('mousemove', onMouseMove);
+            window.addEventListener('resize', onWindowResize);
+        }
+
+        function onWindowResize(e) {
+            width = window.innerWidth;
+            height = window.innerHeight;
+        }
+
+        function onMouseMove(e) {
+            cursor.x = e.clientX;
+            cursor.y = e.clientY;
+
+            addParticle(cursor.x, cursor.y, possibleColors[Math.floor(Math.random() * possibleColors.length)]);
+        }
+
+        function addParticle(x, y, color) {
+            var particle = new Particle();
+            particle.init(x, y, color);
+            particles.push(particle);
+        }
+
+        function updateParticles() {
+
+
+            for (var i = 0; i < particles.length; i++) {
+                particles[i].update();
+            }
+
+
+            for (var i = particles.length - 1; i >= 0; i--) {
+                if (particles[i].lifeSpan < 0) {
+                    particles[i].die();
+                    particles.splice(i, 1);
+                }
+            }
+
+        }
+
+        function loop() {
+            requestAnimationFrame(loop);
+            updateParticles();
+        }
+
+
+        function Particle() {
+
+            this.character = "*";
+            this.lifeSpan = 120; //ms
+            this.initialStyles = {
+                "position": "fixed",
+                "display": "inline-block",
+                "top": "0px",
+                "left": "0px",
+                "pointerEvents": "none",
+                "touch-action": "none",
+                "z-index": "10000000",
+                "fontSize": "25px",
+                "will-change": "transform"
+            };
+
+
+            this.init = function (x, y, color) {
+
+                this.velocity = {
+                    x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() / 2),
+                    y: 1
+                };
+
+                this.position = {x: x + 10, y: y + 10};
+                this.initialStyles.color = color;
+
+                this.element = document.createElement('span');
+                this.element.innerHTML = this.character;
+                applyProperties(this.element, this.initialStyles);
+                this.update();
+
+                document.querySelector('.js-cursor-container').appendChild(this.element);
+            };
+
+            this.update = function () {
+                this.position.x += this.velocity.x;
+                this.position.y += this.velocity.y;
+                this.lifeSpan--;
+
+                this.element.style.transform = "translate3d(" + this.position.x + "px," + this.position.y + "px, 0) scale(" + (this.lifeSpan / 120) + ")";
+            }
+
+            this.die = function () {
+                this.element.parentNode.removeChild(this.element);
+            }
+
+        }
+
+
+        function applyProperties(target, properties) {
+            for (var key in properties) {
+                target.style[key] = properties[key];
+            }
+        }
+
+        if (!('ontouchstart' in window || navigator.msMaxTouchPoints)) init();
+    })();
+</script>
+<!-- 鼠标小星星拖尾跟随 -->
 <!-- 左键单击生成小星星 -->
 <script type="text/javascript">
     !function (e, t, a) {
@@ -441,11 +551,23 @@
     }(window, document);
 </script>
 <!-- 左键单击生成小星星 -->
-<audio controls>
-    <source src="https://avrox-163.github.io/MathsParty/bgm.mp3" type="audio/mpeg">
-    <source src="https://avrox-163.github.io/MathsParty/bgm.ogg" type="audio/ogg">
+<!-- 无法播放音频 -->
+<script type="text/javascript">
+    window.onload = function () {
+        setInterval("toggleSound()", 100);
+    }
 
-    Your browser does not support this audio format.
-</audio>
+    function toggleSound() {
+        var music = document.getElementById("vd");//获取ID
+
+        if (music.paused) { //判读是否播放
+            music.paused = false;
+            music.play(); //没有就播放
+        }
+    }
+</script>
+
+<!-- 无法播放音频 -->
+<audio src="https://avrox-163.github.io/bgm.mp3" autoplay="autoplay" loop="loop"></audio>
 </body>
 </html>
