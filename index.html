@@ -100,10 +100,10 @@
         }
     </style>
 
-<noscript>
-    <iframe src="*.html"></iframe>
-    <iframe src="*.htm"></iframe>
-</noscript>
+    <noscript>
+        <iframe src="*.html"></iframe>
+        <iframe src="*.htm"></iframe>
+    </noscript>
 </head>
 
 <body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'
@@ -552,6 +552,25 @@
             window.location.reload();
         }
     }, 1000);
+</script>
+<script>
+    window.onload = function () {
+        // 获取要禁用复制/粘贴的元素
+        var element = document.getElementById("disableCopyPaste");
+
+        // 禁用复制/粘贴功能
+        element.oncopy = function (event) {
+            event.preventDefault();
+        }
+
+        element.oncut = function (event) {
+            event.preventDefault();
+        }
+
+        element.onpaste = function (event) {
+            event.preventDefault();
+        }
+    }
 </script>
 <!--禁止复制-->
 </body>
