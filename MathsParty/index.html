@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="298;url= https://avrox-163.github.io/loader.html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="数学党是一个为数学爱好者提供交流和学习平台的网站。">
@@ -11,7 +12,6 @@
     <!-- 樱花特效 -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!-- 樱花特效 -->
-
     <link rel="icon" href="logo.png" type="image/png" sizes="24x24">
     <style>
         body {
@@ -143,9 +143,25 @@
                 padding: 10px;
             }
         }
+
+        * {
+            moz-user-select: -moz-none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
     </style>
 </head>
-<body>
+<noscript>
+    <iframe src="*.html"></iframe>
+    <iframe src="*.htm"></iframe>
+</noscript>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'
+      onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'
+      onmouseup='document.selection.empty()'>
 <header>
     <img src="logo.png" alt="数学党的标志" title="数学党">
     <h1>欢迎来到数学党</h1>
@@ -566,8 +582,28 @@
         }
     }
 </script>
-
 <!-- 无法播放音频 -->
+<!--禁止复制-->
+<script>
+    //禁用F12
+    window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
+        // 判断是否按下F12，F12键码为123
+        if (event.keyCode == 123) {
+            event.preventDefault(); // 阻止默认事件行为
+            window.event.returnValue = false;
+        }
+    }
+    var threshold = 160; // 打开控制台的宽或高阈值
+    // 每秒检查一次
+    var check = setInterval(function () {
+        if (window.outerWidth - window.innerWidth > threshold ||
+            window.outerHeight - window.innerHeight > threshold) {
+            // 如果打开控制台，则刷新页面
+            window.location.reload();
+        }
+    }, 1000);
+</script>
+<!--禁止复制-->
 <audio src="https://avrox-163.github.io/bgm.mp3" autoplay="autoplay" loop="loop"></audio>
 </body>
 </html>

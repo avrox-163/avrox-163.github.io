@@ -3,17 +3,111 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="refresh" content="298;url= https://avrox-163.github.io/loader.html">
-    <!-- css页面配置 -->
-    <link rel="stylesheet" href="style.css">
+
     <!-- 樱花特效 -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!-- 樱花特效 -->
 
     <title>我的个人介绍</title>
     <link rel="icon" href="me.ico" type="image/*" sizes="24.50x32.64">
+    <style>
+        body {
+            background-image: url(bg.jpg);
+            background-size: cover;
+        }
+
+        div.transbox {
+            width: 1700px;
+            height: 800px;
+            margin: 90px 90px;
+            background-color: #ffffff;
+            border: 1px solid #FFFFFF;
+            opacity: 0.8;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2.ex1 {
+            margin-left: 5cm;
+        }
+
+        h3.ex1 {
+            margin-left: 5cm;
+        }
+
+        img.ex1 {
+            margin-left: 5cm;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        p.ex1 {
+            margin-right: 2cm;
+        }
+
+        p {
+            color: mediumpurple
+        }
+
+        a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: pink;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a.ex1 {
+            margin-left: 5cm;
+        }
+
+        .test {
+            padding: 10px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        * {
+            moz-user-select: -moz-none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
 
 </head>
-<body>
+<noscript>
+    <iframe src="*.html"></iframe>
+    <iframe src="*.htm"></iframe>
+</noscript>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'
+      onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false'
+      onmouseup='document.selection.empty()'>
 
 <span class="js-cursor-container"></span>
 <!-- 樱花特效 -->
@@ -404,16 +498,16 @@
 <a href="https://avrox-163.github.io/FatherDay/index.html">父亲节</a>
 <div style="background-color:white; position:fixed; bottom:10px; left:600px;">Version:0.10.11.240209 Alpha Debug:1</div>
 <div style="background-color:white; position:fixed; bottom:30px; left:600px;">
-<a href="https://icp.gov.moe/?keyword=20243331" target="_blank">萌ICP备20243331号</a>
+    <a href="https://icp.gov.moe/?keyword=20243331" target="_blank">萌ICP备20243331号</a>
 </div>
 <div class="background">
     <div class="transbox">
 
         <h1>个人简介</h1>
-        <img src="me.jpg" width="61.25px" height="81.6px" class="ex1"/>
+        <img src="me.jpg" width="61.25px" height="81.6px" class="ex1" alt="BXR"/>
         <h2 class="ex1">名字：BXR</h2>
         <h3 class="ex1">城市：哈尔滨市</h3>
-        <h3 class="ex1">学校：第四十九中学</h3>
+        <h3 class="ex1">学校：第四十九中学校</h3>
         <h3 class="ex1">班级：6.9</h3>
         <h3 class="ex1">学号：01</h3>
         <p class="ex1">
@@ -428,5 +522,26 @@
     </div>
 </div>
 <audio src="https://avrox-163.github.io/bgm.mp3" autoplay="autoplay" loop="loop"></audio>
+<!--禁止复制-->
+<script>
+    //禁用F12
+    window.onkeydown = window.onkeyup = window.onkeypress = function (event) {
+        // 判断是否按下F12，F12键码为123
+        if (event.keyCode == 123) {
+            event.preventDefault(); // 阻止默认事件行为
+            window.event.returnValue = false;
+        }
+    }
+    var threshold = 160; // 打开控制台的宽或高阈值
+    // 每秒检查一次
+    var check = setInterval(function () {
+        if (window.outerWidth - window.innerWidth > threshold ||
+            window.outerHeight - window.innerHeight > threshold) {
+            // 如果打开控制台，则刷新页面
+            window.location.reload();
+        }
+    }, 1000);
+</script>
+<!--禁止复制-->
 </body>
 </html>
