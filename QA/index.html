@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>实时答题页面</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 禁用选中和复制 */
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>综合知识实时答题</h1>
+  <div id="question-container">
+    <p id="question-text"></p>
+    <div id="options"></div>
+    <span id="feedback" class="feedback"></span>
+  </div>
+  <div id="score-container">
+    <p>你的得分: <span id="score">0</span> / 10</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+/* 设置整个页面的背景为天蓝色 */
+body {
+  font-family: Arial, sans-serif;
+  background: #87CEEB;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 18px;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#question-container {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#question-text {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+/* 选项按钮样式 */
+.option-btn {
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+  background-color: #e0e0e0;
+  border-color: #999;
+}
+
+.option-btn:disabled {
+  background-color: #f8f8f8;
+  border-color: #eee;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.feedback {
+  display: block;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.correct-answer {
+  color: green;
+  font-weight: bold;
+}
+
+#score-container p {
+  font-size: 22px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
