@@ -29,10 +29,5 @@
 <a href="https://avrox-163.github.io/timer/index.html">计时器</a>
 <a href="https://avrox-163.github.io/SpoofShit/index.html">恶搞（大便）</a>
 <a href="https://avrox-163.github.io/index.html">刷新&播放</a>
-<a href="https://avrox-163.github.io/download/python/download.html">下载python源代码</a>
-<a href="https://avrox-163.github.io/download/txt/download.html">下载文本文档</a>
-<a href="https://avrox-163.github.io/download/photo/download.html">下载图片</a>
-<a href="https://avrox-163.github.io/download/video/show.html">观看视频</a>
-<a href="https://avrox-163.github.io/PK/index.html">PK（学习）</a>
 <a href="https://avrox-163.github.io/space_museum/index.html">航天馆</a>
 <a href="https://avrox-163.github.io/FatherDay/index.html">父亲节</a>
