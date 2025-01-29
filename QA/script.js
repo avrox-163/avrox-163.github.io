@@ -74,7 +74,7 @@ function checkAnswer(selectedIndex) {
       questionText.textContent = '答题结束！';
       optionsDiv.innerHTML = '';
     }
-  }, 2500);
+  }, 800);
 }
 
 // 初始化加载题目
