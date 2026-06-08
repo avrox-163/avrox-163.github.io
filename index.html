@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="refresh" content="298;url= https://sxws.pages.dev/loader.html">
+    <meta http-equiv="refresh" content="298;url=https://sxws.pages.dev/loader.html">
 
     <!-- 樱花特效 -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -127,7 +127,6 @@
 
     Sakura.prototype.draw = function (cxt) {
         cxt.save();
-        var xc = 40 * this.s / 4;
         cxt.translate(this.x, this.y);
         cxt.rotate(this.r);
         cxt.drawImage(img, 0, 0, 40 * this.s, 40 * this.s)
@@ -158,7 +157,7 @@
         }
     }
 
-    SakuraList = function () {
+    var SakuraList = function () {
         this.list = [];
     }
     SakuraList.prototype.push = function (sakura) {
@@ -220,7 +219,7 @@
 
     function startSakura() {
 
-        requestAnimationFrame = window.requestAnimationFrame ||
+        var requestAnimationFrame = window.requestAnimationFrame ||
             window.mozRequestAnimationFrame ||
             window.webkitRequestAnimationFrame ||
             window.msRequestAnimationFrame ||
@@ -252,12 +251,13 @@
             sakura.draw(cxt);
             sakuraList.push(sakura);
         }
-        stop = requestAnimationFrame(function () {
+        function animate() {
             cxt.clearRect(0, 0, canvas.width, canvas.height);
             sakuraList.update();
             sakuraList.draw(cxt);
-            stop = requestAnimationFrame(arguments.callee);
-        })
+            stop = requestAnimationFrame(animate);
+        }
+        stop = requestAnimationFrame(animate);
     }
 
     window.onresize = function () {
@@ -462,8 +462,9 @@
 <!-- 左键单击生成小星星 -->
 <!-- 无法播放音频 -->
 <script type="text/javascript">
+    var musicInterval;
     window.addEventListener('load', function () {
-        setInterval(toggleSound, 100);
+        musicInterval = setInterval(toggleSound, 100);
     });
 
     function toggleSound() {
